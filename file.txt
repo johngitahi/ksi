@@ -1,0 +1,3 @@
+let n: usize = 30;
+println!("value of n is {n});
+// this has been written on the cog interface
