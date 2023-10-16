@@ -30,7 +30,7 @@ cargo build --release
 This project uses the `colored` crate for line number styling. It is in the Manifest file and will be installed by default when you build the binary.
 
 ## License
-This project is released under the Unlicense. You are free to use this code for any purpose without any restrictions.
+This project is released under the AGPL-3.0. Please read the LICENSE file for the full license text and terms.
 
 ## Author
 
