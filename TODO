@@ -1,2 +1,3 @@
-FILE arg to be passed as cli arg rather than have a prefixed file for editing
-
+✔️  FILE arg to be passed as cli arg rather than have a prefixed file for editing 
+✔️  Add line numbering to indicate line number but that should not be added to the buffer
+❌ Real time line number display

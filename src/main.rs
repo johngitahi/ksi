@@ -1,6 +1,10 @@
 use std::fs;
 use std::io::{self, Write};
+use std::env;
+extern crate colored;
+use colored::*;
 
+// a buffer which expands/reduces as needed
 struct AdaptiveBuffer {
     buffer: Vec<String>,
     buffer_size: usize,
@@ -45,17 +49,25 @@ impl AdaptiveBuffer {
     }
 
     fn display_buffer(&self) {
-        for line in &self.buffer {
-            println!("{}", line);
+        for (line_num, line) in self.buffer.iter().enumerate() {
+            println!("{} {}", line_num.to_string().cyan().italic(), line);
         }
     }
 }
 
 fn main() {
-    let mut buffer = AdaptiveBuffer::new(10, 1.5, 0.5);
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 {
+        eprintln!("Enter a filename as a cli argument.");
+        std::process::exit(100);
+    }
+
+    let filename = &args[1];
+
+    let mut buffer = AdaptiveBuffer::new(10, 500.0, 0.5);
 
     // Read file into the buffer
-    if let Ok(contents) = fs::read_to_string("file.txt") {
+    if let Ok(contents) = fs::read_to_string(filename) {
         buffer.buffer = contents.lines().map(|s| s.to_owned()).collect();
     }
 
@@ -75,6 +87,7 @@ fn main() {
                 let mut new_lines = Vec::new();
                 loop {
                     let mut line = String::new();
+                    // add option to show number you are in
                     io::stdin().read_line(&mut line).unwrap();
                     if line.trim() == "." {
                         break;
@@ -95,7 +108,7 @@ fn main() {
     }
 
     // Save changes back to the file
-    if let Err(err) = fs::write("file.txt", buffer.buffer.join("\n")) {
+    if let Err(err) = fs::write(filename, buffer.buffer.join("\n")) {
         eprintln!("Failed to save changes: {}", err);
     }
 }
