@@ -1,10 +1,10 @@
 [package]
-name = "cog"
+name = "ksi"
 version = "0.0.1"
 description = "A ed-like text editor"
 license = "Zlib"
-homepage = "https://github.com/johngitahi/cog"
-repository = "https://github.com/johngitahi/cog"
+homepage = "https://github.com/johngitahi/ksi"
+repository = "https://github.com/johngitahi/ksi"
 keywords = ["text-editor"]
 categories = ["command-line-utilities"]
 readme = "README.md"
@@ -15,5 +15,5 @@ readme = "README.md"
 colored = "2"
 
 [[bin]]
-name = "cog"
+name = "ksi"
 path = "src/main.rs"

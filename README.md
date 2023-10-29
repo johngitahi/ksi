@@ -1,6 +1,6 @@
-# cog - cli ed-like text editor
+# ksi - cli ed-like text editor
 
-This is a simple command line text editor I have written in the Rust language. It allows you to view, edit, and savetext files from the command line. (just as how ed works)
+This is a simple command line text editor I have written in Rust. It allows you to view, edit, and save text files from the command line. (just as how ed works)
 
 ## Usage
 
@@ -13,12 +13,12 @@ This is a simple command line text editor I have written in the Rust language. I
 
 1. Build the binary using Cargo:
 ```shell
-cargo build --release
+cargo install ksi
 ```
 
-2. Run the `cog` text editor, specifying a text file as a command line argument:
+2. Run the `ksi` text editor, specifying a text file as a command line argument:
 ```shell
-./target/release/cog sample/textfile.TXT
+ksi file.TXT
 ```
 
 3. Use the above commands to interact with the file.

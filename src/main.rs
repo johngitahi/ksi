@@ -72,7 +72,7 @@ fn main() {
     }
 
     loop {
-        print!("cog> ");
+        print!("ksi> ");
         io::stdout().flush().unwrap();
         let mut input = String::new();
         io::stdin().read_line(&mut input).unwrap();
