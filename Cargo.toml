@@ -2,7 +2,12 @@
 name = "cog"
 version = "0.0.1"
 description = "A ed-like text editor"
-license = "AGPL-3.0-only"
+license = "Zlib"
+homepage = "https://github.com/johngitahi/cog"
+repository = "https://github.com/johngitahi/cog"
+keywords = ["text-editor"]
+categories = ["command-line-utilities"]
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
